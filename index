@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nikahku.AI - Undangan Digital Elegan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Playfair Display', serif; }
+  </style>
+</head>
+<body class="bg-[#FDF8F3] text-gray-800">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <div class="text-4xl text-[#C7A27C]">💍❤️ Nikahku.AI</div>
+    <p class="text-lg mt-2">Undangan digital pernikahan elegan & cepat</p>
+  </header>
+
+  <!-- Hero CTA -->
+  <section class="text-center px-4">
+    <h1 class="text-3xl font-bold mb-2">Buat Undangan Pernikahan Digital Sekarang</h1>
+    <p class="mb-4">Desain elegan + Video animasi personal hanya dalam 1x24 jam</p>
+    <a href="#form" class="bg-[#C7A27C] text-white px-6 py-2 rounded-full">Buat Sekarang</a>
+  </section>
+
+  <!-- Demo Video -->
+  <section class="text-center mt-10 px-4">
+    <h2 class="text-2xl font-semibold mb-2">Contoh Undangan</h2>
+    <iframe class="mx-auto rounded-xl shadow-lg" width="560" height="315" src="https://www.youtube.com/embed/W1taEt_RVcw" frameborder="0" allowfullscreen></iframe>
+  </section>
+
+  <!-- Galeri Template -->
+  <section class="text-center mt-10 px-4">
+    <h2 class="text-2xl font-semibold mb-4">Pilih Template Video</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <iframe class="w-full h-64 rounded-xl shadow" src="https://www.youtube.com/embed/W1taEt_RVcw" frameborder="0" allowfullscreen></iframe>
+      <iframe class="w-full h-64 rounded-xl shadow" src="https://www.youtube.com/embed/5OTR3iM8ZVY" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- Form Pemesanan -->
+  <section id="form" class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold mb-4 text-center">Form Pemesanan</h2>
+    <form id="orderForm">
+      <label class="block mb-2">Nama Pengantin Pria</label>
+      <input type="text" id="pria" class="w-full border rounded p-2 mb-4" required>
+
+      <label class="block mb-2">Nama Pengantin Wanita</label>
+      <input type="text" id="wanita" class="w-full border rounded p-2 mb-4" required>
+
+      <label class="block mb-2">Tanggal Pernikahan</label>
+      <input type="date" id="tanggal" class="w-full border rounded p-2 mb-4" required>
+
+      <label class="block mb-2">Pilih Tema Video</label>
+      <select id="tema" class="w-full border rounded p-2 mb-4">
+        <option>Gold Elegan</option>
+        <option>Rustic Natural</option>
+        <option>Soft Pink</option>
+        <option>Modern Clean</option>
+      </select>
+
+      <label class="block mb-2">Kata Sambutan (opsional)</label>
+      <textarea id="sambutan" class="w-full border rounded p-2 mb-4"></textarea>
+
+      <label class="block mb-2">Link Upload Foto (Drive/WeTransfer)</label>
+      <input type="url" id="foto" class="w-full border rounded p-2 mb-4" required>
+
+      <label class="block mb-2">No WhatsApp Anda</label>
+      <input type="tel" id="kontak" class="w-full border rounded p-2 mb-4" required>
+
+      <label class="block mb-2">Catatan Tambahan (opsional)</label>
+      <textarea id="catatan" class="w-full border rounded p-2 mb-4"></textarea>
+
+      <button type="submit" class="w-full bg-[#C7A27C] text-white py-2 rounded">Kirim & Lanjut ke Pembayaran</button>
+    </form>
+  </section>
+
+  <!-- Informasi Transfer Manual -->
+  <section class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-2xl shadow text-center">
+    <h2 class="text-xl font-semibold mb-4">Transfer Pembayaran</h2>
+    <p>Setelah mengisi form, silakan transfer ke rekening berikut:</p>
+    <p class="mt-2 font-semibold">BCA 2302533874 a.n. IDHAM KHALID</p>
+    <p>Kirim bukti transfer ke WhatsApp <a class="text-blue-500" href="https://wa.me/6282124255647">0821-2425-5647</a></p>
+    <p class="text-sm text-gray-500 mt-2">Undangan akan diproses setelah transfer dikonfirmasi</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-sm mt-12 mb-6 text-gray-500">
+    &copy; 2025 Nikahku.AI. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const form = document.getElementById('orderForm');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const pria = document.getElementById('pria').value;
+      const wanita = document.getElementById('wanita').value;
+      const tanggal = document.getElementById('tanggal').value;
+      const tema = document.getElementById('tema').value;
+      const sambutan = document.getElementById('sambutan').value;
+      const foto = document.getElementById('foto').value;
+      const kontak = document.getElementById('kontak').value;
+      const catatan = document.getElementById('catatan').value;
+
+      const kode = 'NIK' + new Date().getTime();
+      const message = encodeURIComponent(`Halo Nikahku.AI,%0ASaya ingin pesan undangan digital:%0AKode Order: ${kode}%0APengantin: ${pria} & ${wanita}%0ATanggal: ${tanggal}%0ATema: ${tema}%0ASambutan: ${sambutan}%0AFoto: ${foto}%0AWhatsApp: ${kontak}%0ACatatan: ${catatan}`);
+
+      window.open(`https://wa.me/6282124255647?text=${message}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
